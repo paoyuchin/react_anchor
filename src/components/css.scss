@@ -1,0 +1,199 @@
+
+$classname: "nv_coln";
+
+.#{$classname} {
+  .CoverOpenClass {
+    display: block !important;
+  }
+
+  .CovercloseClass {
+    display: none !important;
+  }
+
+  .#{$classname}_sections {
+    .#{$classname}_section {
+      height: 350px;
+      background-color: lightgreen;
+    }
+  }
+
+  .#{$classname}_navigator {
+    display: none;
+    overflow: hidden;
+    background-color: #ffffff;
+    width: 100%;
+    z-index: 2;
+
+    &.anchorFixed {
+      position: fixed !important;
+      top: 44px;
+    }
+
+    &.mShowNavClass {
+      display: block;
+    }
+
+    .#{$classname}_anchorsBigwrap {
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+
+      .#{$classname}_anchors {
+        height: 44px;
+        width: max-content;
+        padding: 10px 0;
+
+        .#{$classname}_anchor {
+          cursor: pointer;
+          background: #fff;
+          font-size: 16px;
+          border-radius: 5px;
+          margin: 0 5px;
+          padding: 5px;
+          text-align: center;
+          color: lightgray;
+          width: 80px;
+          height: 43px;
+
+          &.isActive {
+            background-color: #ff615d;
+            color: white !important;
+          }
+        }
+      }
+    }
+
+    .#{$classname}_ArrorTop {
+      cursor: pointer;
+      right: 0;
+      text-align: center;
+      width: 44px;
+      height: 45px;
+      background-color: #fff;
+      color: gray;
+      position: absolute;
+      padding-top: 10px;
+      display: block;
+      top: 0;
+      border-top: 1px solid #ddd;
+      border-left: 1px solid #ddd;
+    }
+
+    .#{$classname}_instant {
+      display: none;
+    }
+
+    .#{$classname}_cover {
+      width: 100vw;
+      height: 100vh;
+      background-color: #222222;
+      opacity: 0.5;
+      display: block;
+    }
+
+    .#{$classname}_ButtonCoverContainer {
+      display: none;
+
+      &.CoverOpenClass {
+        display: flex !important;
+        justify-content: space-between;
+        width: 100%;
+        flex-direction: inherit;
+        flex-wrap: wrap;
+        align-content: stretch;
+        padding: 5px 10px;
+
+        & .isActive {
+          background-color: #ff615d;
+          color: white !important;
+        }
+      }
+
+      div {
+        cursor: pointer;
+        color: #222222;
+        text-align: center;
+        width: 30%;
+        display: inline-block;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid lightgray;
+        height: 32px;
+        margin: 5px;
+      }
+    }
+  }
+
+  }
+
+  @media (min-width: 980px){
+    // .nv_coln_anchors{
+    //   background-color: black;
+    // }
+    // style on tablet device
+    .#{$classname}_navigator {
+      display: block;
+      background-color: transparent;
+      padding: 0;
+      border: none;
+
+      &.anchorFixed {
+        position: fixed !important;
+        // display: block !important;
+        top: 90px;
+      }
+
+      .#{$classname}_anchorsBigwrap {
+        border: none;
+
+        .#{$classname}_anchors {
+          border-top: none;
+          border-bottom: none;
+          height: initial;
+          background-color: transparent;
+          padding: 0;
+
+          .#{$classname}_anchor {
+            width: 43px;
+            display: block;
+            text-align: center;
+            border-radius: 0;
+            z-index: -5;
+            border: 1px solid #dddddd;
+            font-size: 12px;
+            height: auto;
+
+            &+.#{$classname}_anchor {
+              border-top: none;
+            }
+
+            &.isActive {
+              background-color: #ff615d;
+              color: white !important;
+            }
+          }
+        }
+      }
+
+      .#{$classname}_ArrorTop {
+        display: none;
+      }
+
+      .#{$classname}_instant {
+        color: #e10500;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        font-weight: bold;
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
+        text-align: center;
+        padding-left: 10px;
+        font-size: 14px;
+
+        svg {
+          position: relative;
+          left: 10px;
+        }
+      }
+    }
+  }
