@@ -1,7 +1,6 @@
 import React from 'react';
 
-export default function arrowTop() {
-    return(
+const arrowTop = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"
@@ -16,6 +15,6 @@ export default function arrowTop() {
             <path d="M-3-5h16v16H-3z" />
         </g>
     </svg>
-    )
+);
 
-}
+export default arrowTop;

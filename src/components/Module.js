@@ -24,14 +24,11 @@ class Module extends Component {
         };
     }
     componentDidMount () {
-        console.log(1, this.state.mode);
-        console.log(2, this.props.options)
         this.props.data.forEach(section => {
             const element = document.querySelector(`[data-anchor=${section.anchorTo}]`);
-            // console.log('element', element);
             this.sections[section.anchorTo] = {
-                top: element instanceof Element ? element.offsetTop : 0,
-                height: element instanceof Element ? element.offsetHeight: 0
+                top: element.offsetTop,
+                height: element.offsetHeight
             };
         });
         window.addEventListener('scroll', () => this.onScroll());
@@ -131,50 +128,6 @@ class Module extends Component {
     }
 }
 
-Module.defaultProps = {
-    options: {
-        fixed: {
-            mobile: {
-                startFixedY: 0,
-                endFixedY: 0
-            },
-            desktop: {
-                startFixedY: 0,
-                endFixedY: 0
-            }
-        }
-    },
-    data: [
-        {
-            title: '季節玩法',
-            anchorTo: 'season'
-        },
-        {
-            title: '團體旅遊',
-            anchorTo: 'grouptravel'
-        },
-        {
-            title: '機票資訊',
-            anchorTo: 'airplantickets'
-        },
-        {
-            title: '訂房資訊',
-            anchorTo: 'booking'
-        },
-        {
-            title: '自由行程',
-            anchorTo: 'selftour'
-        },
-        {
-            title: '票卷優惠',
-            anchorTo: 'tickets'
-        },
-        {
-            title: '特惠限時搶購',
-            anchorTo: 'specialoffer'
-        }
-    ]
-};
 
 Module.propTypes = {
     data: PropTypes.arrayOf(
@@ -184,16 +137,8 @@ Module.propTypes = {
         })
     ),
     options: PropTypes.shape({
-        fixed: PropTypes.shape({
-            mobile: PropTypes.shape({
-                startFixedY: PropTypes.number,
-                endFixedY: PropTypes.number,
-            }),
-            dessktop: PropTypes.shape({
-                startFixedY: PropTypes.number,
-                endFixedY: PropTypes.number,
-            })
-        })
-    })
+        mobile: PropTypes.string,
+        dessktop: PropTypes.string,
+    }),
 };
 export default Module;

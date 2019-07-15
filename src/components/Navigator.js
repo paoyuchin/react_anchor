@@ -44,6 +44,7 @@ export default class Navigator extends Component {
 
     isInView (elem) {
         let bounding = elem.getBoundingClientRect();
+        // console.log(bounding);
         let view = this.navigatorDom.current.getBoundingClientRect();
         return (
             bounding.top >= view.top &&
@@ -57,7 +58,6 @@ export default class Navigator extends Component {
             return;
         }
         let navigatorDom = this.navigatorDom.current;
-        console.log('navigatorDom', navigatorDom)
         let anchorsContainer = this.anchorsDom.current;
 
         let activeAnchor = document.querySelector('.nv_coln_anchor.isActive');

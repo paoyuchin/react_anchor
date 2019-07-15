@@ -1,50 +1,74 @@
+/**
+ * Import core mixins, variables, or others
+ */
+// @import "../core/core/mixins";
+// @import "../core/core/variables";
+/**
+ * Define your classname
+ */
 
+* {
+  // outline: 1px solid red;
+  box-sizing: border-box;
+}
 $classname: "nv_coln";
-
+.nv_coln_fake_header {
+  width: 100%;
+  height: 44px;
+  background: blue;
+  position: fixed;
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    height: 80px;
+    background: lightpink;
+    position: fixed;
+  }
+}
+.nv_coln_fake_banner {
+  width: 100%;
+  height: 244px;
+  background: red;
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    height: 488px;
+    background: lightgreen;
+  }
+}
 .#{$classname} {
   .CoverOpenClass {
     display: block !important;
   }
-
   .CovercloseClass {
     display: none !important;
   }
-
   .#{$classname}_sections {
     .#{$classname}_section {
       height: 350px;
       background-color: lightgreen;
     }
   }
-
   .#{$classname}_navigator {
     display: none;
     overflow: hidden;
     background-color: #ffffff;
     width: 100%;
     z-index: 2;
-
     &.anchorFixed {
       position: fixed !important;
       top: 44px;
     }
-
     &.mShowNavClass {
-      display: block;
+      display: block !important;
     }
-
     .#{$classname}_anchorsBigwrap {
       border-top: 1px solid #ddd;
       border-bottom: 1px solid #ddd;
-
       .#{$classname}_anchors {
         height: 44px;
         width: max-content;
         padding: 10px 0;
-
         .#{$classname}_anchor {
           cursor: pointer;
-          background: #fff;
           font-size: 16px;
           border-radius: 5px;
           margin: 0 5px;
@@ -53,7 +77,6 @@ $classname: "nv_coln";
           color: lightgray;
           width: 80px;
           height: 43px;
-
           &.isActive {
             background-color: #ff615d;
             color: white !important;
@@ -61,7 +84,6 @@ $classname: "nv_coln";
         }
       }
     }
-
     .#{$classname}_ArrorTop {
       cursor: pointer;
       right: 0;
@@ -81,7 +103,6 @@ $classname: "nv_coln";
     .#{$classname}_instant {
       display: none;
     }
-
     .#{$classname}_cover {
       width: 100vw;
       height: 100vh;
@@ -89,10 +110,8 @@ $classname: "nv_coln";
       opacity: 0.5;
       display: block;
     }
-
     .#{$classname}_ButtonCoverContainer {
       display: none;
-
       &.CoverOpenClass {
         display: flex !important;
         justify-content: space-between;
@@ -101,13 +120,11 @@ $classname: "nv_coln";
         flex-wrap: wrap;
         align-content: stretch;
         padding: 5px 10px;
-
         & .isActive {
           background-color: #ff615d;
           color: white !important;
         }
       }
-
       div {
         cursor: pointer;
         color: #222222;
@@ -123,35 +140,26 @@ $classname: "nv_coln";
     }
   }
 
-  }
-
-  @media (min-width: 980px){
-    // .nv_coln_anchors{
-    //   background-color: black;
-    // }
+  @media screen and (min-width: 768px) {
     // style on tablet device
     .#{$classname}_navigator {
       display: block;
       background-color: transparent;
       padding: 0;
       border: none;
-
       &.anchorFixed {
         position: fixed !important;
         // display: block !important;
         top: 90px;
       }
-
       .#{$classname}_anchorsBigwrap {
         border: none;
-
         .#{$classname}_anchors {
           border-top: none;
           border-bottom: none;
           height: initial;
           background-color: transparent;
           padding: 0;
-
           .#{$classname}_anchor {
             width: 43px;
             display: block;
@@ -161,11 +169,9 @@ $classname: "nv_coln";
             border: 1px solid #dddddd;
             font-size: 12px;
             height: auto;
-
-            &+.#{$classname}_anchor {
+            & + .#{$classname}_anchor {
               border-top: none;
             }
-
             &.isActive {
               background-color: #ff615d;
               color: white !important;
@@ -173,11 +179,9 @@ $classname: "nv_coln";
           }
         }
       }
-
       .#{$classname}_ArrorTop {
         display: none;
       }
-
       .#{$classname}_instant {
         color: #e10500;
         width: 40px;
@@ -189,7 +193,6 @@ $classname: "nv_coln";
         text-align: center;
         padding-left: 10px;
         font-size: 14px;
-
         svg {
           position: relative;
           left: 10px;
@@ -197,3 +200,4 @@ $classname: "nv_coln";
       }
     }
   }
+}
