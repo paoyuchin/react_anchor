@@ -58,7 +58,7 @@ const props = {
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
-storiesOf('導航 (navs)', module).add('nv_coln', () => (
+storiesOf('Anchor', module).add('滾動錨點模組', () => (
     <div>
         <div className="nv_coln_fake_header">header</div>
         <div className="nv_coln_fake_banner">banner</div>
