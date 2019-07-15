@@ -56,7 +56,7 @@ const props = {
 };
 
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
+// storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
 storiesOf('Anchor', module).add('滾動錨點模組', () => (
     <div>
